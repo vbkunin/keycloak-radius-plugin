@@ -76,6 +76,7 @@ public class FileRadiusConfiguration implements IRadiusConfiguration {
         radiusServerSettings.setRadSecSettings(transform(configModel.getRadsec()));
         radiusServerSettings.setCoASettings(transform(configModel.getCoa()));
         radiusServerSettings.setUseUdpRadius(configModel.isUseUdpRadius());
+        radiusServerSettings.setKeycloakDefaultRealm(configModel.getKeycloakDefaultRealm());
         if (configModel.getRadiusIpAccess() != null) {
             radiusServerSettings
                     .setAccessMap(configModel.getRadiusIpAccess().stream().collect(

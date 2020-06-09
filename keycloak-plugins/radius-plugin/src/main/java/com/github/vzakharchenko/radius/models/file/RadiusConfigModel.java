@@ -12,6 +12,7 @@ public class RadiusConfigModel {
     private int numberThreads = 8;
     private List<RadiusAccessModel> radiusIpAccess;
     private boolean useUdpRadius;
+    private String keycloakDefaultRealm;
 
     public String getSharedSecret() {
         return sharedSecret;
@@ -75,5 +76,13 @@ public class RadiusConfigModel {
 
     public void setCoa(CoASettingsModel coa) {
         this.coa = coa;
+    }
+
+    public String getKeycloakDefaultRealm() {
+        return keycloakDefaultRealm;
+    }
+
+    public void setKeycloakDefaultRealm(String keycloakDefaultRealm) {
+        this.keycloakDefaultRealm = keycloakDefaultRealm;
     }
 }

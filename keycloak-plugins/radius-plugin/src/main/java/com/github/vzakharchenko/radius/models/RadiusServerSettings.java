@@ -4,6 +4,7 @@ import java.util.Map;
 
 public class RadiusServerSettings {
     private String secret;
+    private String keycloakDefaultRealm;
     private int authPort;
     private boolean useUdpRadius;
     private int accountPort;
@@ -74,5 +75,13 @@ public class RadiusServerSettings {
 
     public void setCoASettings(CoASettings coASettings) {
         this.coASettings = coASettings;
+    }
+
+    public String getKeycloakDefaultRealm() {
+        return keycloakDefaultRealm;
+    }
+
+    public void setKeycloakDefaultRealm(String keycloakDefaultRealm) {
+        this.keycloakDefaultRealm = keycloakDefaultRealm;
     }
 }

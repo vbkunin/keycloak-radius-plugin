@@ -166,7 +166,15 @@ public final class RadiusHelper {
 
     public static RealmModel getRealm(KeycloakSession session, RadiusPacket radiusPacket) {
         List<String> attributes = getRealmAttributes(session);
-        return getRealm(session, radiusPacket, attributes);
+        RealmModel realmModel = getRealm(session, radiusPacket, attributes);
+        if (realmModel == null) {
+            String defaultRealmName = RadiusConfigHelper
+                    .getConfig().getRadiusSettings().getKeycloakDefaultRealm();
+            if (defaultRealmName != null) {
+                return session.realms().getRealm(defaultRealmName);
+            }
+        }
+        return realmModel;
     }
 
     @VisibleForTesting
